@@ -50,10 +50,11 @@ set CLK_HALFPERIOD_NS [expr ${FC_CLK_PERIOD_NS} / 2.0]
 add_files -norecurse $FPGA_RTL/xilinx_pulpissimo.v
 
 # Add Xilinx IPs
-read_ip $FPGA_IPS/xilinx_clk_mngr/ip/xilinx_clk_mngr.xci
-read_ip $FPGA_IPS/xilinx_slow_clk_mngr/ip/xilinx_slow_clk_mngr.xci
-read_ip $FPGA_IPS/xilinx_interleaved_ram/ip/xilinx_interleaved_ram.xci
-read_ip $FPGA_IPS/xilinx_private_ram/ip/xilinx_private_ram.xci
+import_ip $FPGA_IPS/xilinx_clk_mngr/ip/xilinx_clk_mngr.xci
+import_ip $FPGA_IPS/xilinx_slow_clk_mngr/ip/xilinx_slow_clk_mngr.xci
+import_ip $FPGA_IPS/xilinx_interleaved_ram/ip/xilinx_interleaved_ram.xci
+import_ip $FPGA_IPS/xilinx_private_ram/ip/xilinx_private_ram.xci
+synth_ip [get_ips]
 
 # Add wrappers and xilinx specific techcells
 add_files -norecurse $FPGA_RTL/fpga_clk_gen.sv

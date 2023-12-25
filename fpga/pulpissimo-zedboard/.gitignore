@@ -20,3 +20,4 @@ gmon.out
 /pulpissimo-nexys_video/**/pulpissimo.bit
 
 **/xdc/constraints.xdc
+/pulpissimo-zedboard.gen/
